@@ -53,5 +53,5 @@ class BaseSpider(scrapy.Spider, metaclass=ABCMeta):
             )
 
     @abstractmethod
-    def get_data(selfself, response):
+    def get_data(self, response):
         pass

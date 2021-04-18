@@ -22,7 +22,7 @@ class AiJobsSpider(BaseXmlFeedSpider):
         item = ItemLoader(response=response, item=JobItem())
 
         item.add_value('listing_url', response.url)
-        item.add_css('job_name', 'h1::text')
+        item.add_css('job_title', 'h1::text')
         item.add_css('company', '.media-body *::text')
         item.add_css('location', 'h1 + p::text')
         item.add_css('employment_type', '.badge-secondary::text')

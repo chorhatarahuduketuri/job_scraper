@@ -5,9 +5,15 @@
 
 
 # useful for handling different item types with a single interface
-from itemadapter import ItemAdapter
 
 
 class JobScraperPipeline:
     def process_item(self, item, spider):
+        print(f'item: {item}')
+        for k, v in item.items():
+            item[k] = ' '.join([string.strip().replace('  ', ' ') for string in v if string.strip()]) \
+                .replace('  ', ' ') \
+                .replace(r'\xa0', ' ').replace(r'\n', ' ').replace(r'\r', ' ').replace(r'\t', ' ') \
+                .replace('  ', ' ') \
+                .strip()
         return item

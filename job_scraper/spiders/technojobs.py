@@ -42,6 +42,7 @@ class TechnojobsSpider(BaseSpider):
     def get_data(self, response):
         item = ItemLoader(response=response, item=JobItem())
 
+        item.add_value('listing_url', response.url)
         item.add_css('job_name', '.job-listing-title h1::text')
         item.add_css('company', self.details_base_css.format('Recruiter:'))
         item.add_css('salary', self.details_base_css.format('Salary/Rate:'))

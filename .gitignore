@@ -4,6 +4,7 @@
 # apparently this actually requires adding
 .idea/*
 # also
+
 output/
 
 # User-specific stuff

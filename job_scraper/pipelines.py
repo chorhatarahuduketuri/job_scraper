@@ -9,6 +9,7 @@
 
 class JobScraperPipeline:
     def process_item(self, item, spider):
+        # TODO: better item processing
         print(f'item: {item}')
         for k, v in item.items():
             item[k] = ' '.join([string.strip().replace('  ', ' ') for string in v if string.strip()]) \

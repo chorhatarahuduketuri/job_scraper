@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "job-scraper"
+version = "0.1.0"
+description = "Scrape, process, and score job listings."
+authors = ["chorhatarahuduketuri <chorhatarahuduketuri@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "job_scraper"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Scrapy = "^2.7.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
